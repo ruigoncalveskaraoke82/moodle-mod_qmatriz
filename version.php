@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Version information for mod_qmatriz (Questionário em matriz).
+ * Version information for mod_qmatriz (Matrix questionnaire).
  *
  * @package    mod_qmatriz
  * @copyright  2026 Rui Pratas
@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'mod_qmatriz';
-$plugin->version   = 2026101600;
+$plugin->version   = 2026110500;
 $plugin->requires  = 2024100700; // Moodle 4.5.
-$plugin->supported = [405, 405];
-$plugin->maturity  = MATURITY_BETA;
-$plugin->release   = '2.0.0';
+$plugin->supported = [405, 503]; // Moodle 4.5 to 5.3.
+$plugin->maturity  = MATURITY_STABLE;
+$plugin->release   = '2.0.1';

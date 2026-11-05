@@ -17,7 +17,8 @@ Each row is answered separately, so a respondent can evaluate many items in a si
 
 ## Requirements
 
-Moodle 4.5 or later.
+Moodle 4.5 or later. Tested on Moodle 4.5 and 5.3 (PHP 8.3, PostgreSQL 16/17).
+From Moodle 5.1 onwards the plugin folder goes in `public/mod/qmatriz`.
 
 ## Installation
 
