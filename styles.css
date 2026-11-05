@@ -1,0 +1,374 @@
+/* Questionário em matriz (mod_qmatriz). */
+
+.mod-qmatriz-form .qmatriz-section {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    color: var(--primary, #0f6cbf);
+    background: rgba(15, 108, 191, .08);
+    padding: .5rem .75rem;
+    border-radius: .25rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.mod-qmatriz-form .qmatriz-secnum {
+    margin-right: .35rem;
+}
+
+.mod-qmatriz-form .qmatriz-ident {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.mod-qmatriz-form .qmatriz-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: .35rem;
+}
+
+.mod-qmatriz-form .qmatriz-field select,
+.mod-qmatriz-form .qmatriz-field input {
+    width: 100%;
+    max-width: 100%;
+}
+
+.mod-qmatriz-form .qmatriz-legend {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.mod-qmatriz-form .qmatriz-legend li {
+    display: flex;
+    gap: .6rem;
+    margin-bottom: .3rem;
+}
+
+.mod-qmatriz-form .qmatriz-legend .qmatriz-qtag {
+    flex: 0 0 auto;
+    min-width: 2rem;
+}
+
+.mod-qmatriz-form .qmatriz-qtag {
+    font-weight: 700;
+    color: var(--primary, #0f6cbf);
+}
+
+.mod-qmatriz-form .qmatriz-toolbar {
+    display: none;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    align-items: center;
+    margin-bottom: .75rem;
+}
+
+.mod-qmatriz-form.qmatriz-js .qmatriz-toolbar {
+    display: flex;
+}
+
+.mod-qmatriz-form .qmatriz-search {
+    flex: 1 1 260px;
+    min-width: 0;
+}
+
+.mod-qmatriz-form .qmatriz-only {
+    margin: 0;
+    cursor: pointer;
+}
+
+.mod-qmatriz-form .qmatriz-count {
+    color: #6a737b;
+    font-variant-numeric: tabular-nums;
+}
+
+.mod-qmatriz-form .qmatriz-tablebox {
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.mod-qmatriz-form table.qmatriz-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.mod-qmatriz-form .qmatriz-matrix th,
+.mod-qmatriz-form .qmatriz-matrix td {
+    padding: .45rem .6rem;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+.mod-qmatriz-form .qmatriz-matrix thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f1f3f5;
+    font-size: .85rem;
+}
+
+.mod-qmatriz-form .qmatriz-matrix th.qmatriz-q,
+.mod-qmatriz-form .qmatriz-matrix td.qmatriz-q {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.mod-qmatriz-form .qmatriz-matrix .qmatriz-x {
+    width: 2.5rem;
+    text-align: center;
+}
+
+.mod-qmatriz-form .qmatriz-matrix tr.qmatriz-on td {
+    background: rgba(15, 108, 191, .06);
+}
+
+.mod-qmatriz-form .qmatriz-matrix tr.qmatriz-on td:first-child {
+    box-shadow: inset 3px 0 0 var(--primary, #0f6cbf);
+}
+
+.mod-qmatriz-form .qmatriz-mlabel {
+    display: none;
+}
+
+/* Yes / No segmented control built from radio buttons. */
+.mod-qmatriz-form .qmatriz-seg {
+    display: inline-flex;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.mod-qmatriz-form .qmatriz-seg input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.mod-qmatriz-form .qmatriz-seg label {
+    margin: 0;
+    padding: .25rem .7rem;
+    font-size: .85rem;
+    font-weight: 600;
+    color: #495057;
+    cursor: pointer;
+    user-select: none;
+}
+
+.mod-qmatriz-form .qmatriz-seg label + input + label {
+    border-left: 1px solid #ced4da;
+}
+
+.mod-qmatriz-form .qmatriz-seg input:focus-visible + label {
+    outline: 2px solid var(--primary, #0f6cbf);
+    outline-offset: -2px;
+}
+
+.mod-qmatriz-form .qmatriz-seg input.qmatriz-o0:checked + label,
+.path-mod-qmatriz .qmatriz-pill-0 {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.mod-qmatriz-form .qmatriz-seg input.qmatriz-o1:checked + label,
+.path-mod-qmatriz .qmatriz-pill-1 {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.mod-qmatriz-form .qmatriz-seg input.qmatriz-oa:checked + label,
+.path-mod-qmatriz .qmatriz-pill-a {
+    background: #0f6cbf;
+    color: #fff;
+}
+
+.path-mod-qmatriz .qmatriz-pill-x {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.path-mod-qmatriz .qmatriz-bg-0 {
+    background: #198754;
+}
+
+.path-mod-qmatriz .qmatriz-bg-1 {
+    background: #dc3545;
+}
+
+.path-mod-qmatriz .qmatriz-bg-a {
+    background: #0f6cbf;
+}
+
+.path-mod-qmatriz .qmatriz-bg-x {
+    background: #adb5bd;
+}
+
+.path-mod-qmatriz .qmatriz-pill {
+    font-weight: 600;
+}
+
+.mod-qmatriz-form .qmatriz-seg.qmatriz-off {
+    opacity: .35;
+}
+
+.mod-qmatriz-form .qmatriz-seg.qmatriz-off label {
+    cursor: not-allowed;
+}
+
+.mod-qmatriz-form .qmatriz-seg.qmatriz-na {
+    opacity: 1;
+    border-color: transparent;
+    background: transparent;
+}
+
+.mod-qmatriz-form .qmatriz-seg.qmatriz-na label,
+.mod-qmatriz-form .qmatriz-seg.qmatriz-na input {
+    display: none;
+}
+
+.mod-qmatriz-form .qmatriz-seg.qmatriz-na::after {
+    content: attr(data-na);
+    font-size: .8rem;
+    color: #6a737b;
+}
+
+.mod-qmatriz-form .qmatriz-clear {
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0 .35rem;
+    color: #6a737b;
+    text-decoration: none;
+}
+
+.mod-qmatriz-form .qmatriz-actions {
+    margin-top: 1rem;
+}
+
+.path-mod-qmatriz .qmatriz-thanks {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* Results. */
+.path-mod-qmatriz .qmatriz-kpis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.path-mod-qmatriz .qmatriz-kpi strong {
+    display: block;
+    font-size: 1.75rem;
+    line-height: 1.1;
+}
+
+.path-mod-qmatriz .qmatriz-kpi span {
+    color: #6a737b;
+    font-size: .875rem;
+}
+
+.path-mod-qmatriz .qmatriz-bar {
+    white-space: nowrap;
+}
+
+.path-mod-qmatriz .qmatriz-bar {
+    display: inline-flex;
+    vertical-align: middle;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.path-mod-qmatriz .qmatriz-bar-seg {
+    display: inline-block;
+    height: .5rem;
+}
+
+.path-mod-qmatriz .qmatriz-bar-text {
+    font-size: .85rem;
+}
+
+.path-mod-qmatriz .qmatriz-downloads > * {
+    margin-bottom: .75rem;
+}
+
+/* Phones: each training action becomes a card. */
+@media (max-width: 680px) {
+    .mod-qmatriz-form .qmatriz-tablebox {
+        border: 0;
+        max-height: none;
+    }
+
+    .mod-qmatriz-form table.qmatriz-matrix thead {
+        display: none;
+    }
+
+    .mod-qmatriz-form table.qmatriz-matrix,
+    .mod-qmatriz-form .qmatriz-matrix tbody,
+    .mod-qmatriz-form .qmatriz-matrix tr,
+    .mod-qmatriz-form .qmatriz-matrix td {
+        display: block;
+        width: auto;
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix tr {
+        position: relative;
+        border: 1px solid #dee2e6;
+        border-radius: .375rem;
+        margin-bottom: .6rem;
+        padding: .5rem .6rem;
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix tr[hidden] {
+        display: none;
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix tr.qmatriz-on {
+        border-color: var(--primary, #0f6cbf);
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix tr.qmatriz-on td {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix td {
+        border: 0;
+        padding: .2rem 0;
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix td.qmatriz-c {
+        font-weight: 600;
+        padding-right: 2rem;
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix td.qmatriz-q {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+    }
+
+    .mod-qmatriz-form .qmatriz-mlabel {
+        display: inline;
+        color: #6a737b;
+        font-size: .85rem;
+    }
+
+    .mod-qmatriz-form .qmatriz-matrix td.qmatriz-x {
+        position: absolute;
+        top: .35rem;
+        right: .35rem;
+        width: auto;
+        padding: 0;
+    }
+}
+
+.mod-qmatriz-form .qmatriz-instructions {
+    margin-bottom: .75rem;
+}
